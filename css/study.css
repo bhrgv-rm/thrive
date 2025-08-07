@@ -1,0 +1,121 @@
+    body {
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #004080;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1, h2, h3 {
+      color: #004080;
+    }
+
+    ul {
+      margin: 10px 0 20px 20px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    footer {
+      background-color: #004080;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+
+      .container {
+        padding: 10px;
+      }
+    }
+
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.dubai{
+  background-image: url(https://images.pexels.com/photos/2044434/pexels-photo-2044434.jpeg);
+}
+.europe{
+  background-image: url(https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg);
+}
+.uae{
+  background-image: url(https://images.pexels.com/photos/2115367/pexels-photo-2115367.jpeg);
+}
+.austria{
+  background-image: url(https://st3.depositphotos.com/2969793/14862/i/380/depositphotos_148628919-stock-photo-national-flag-of-austria-on.jpg);
+}
+.canada{
+  background-image: url(https://images.pexels.com/photos/2448946/pexels-photo-2448946.jpeg);
+}
+.germany{
+  background-image: url(https://images.pexels.com/photos/12782140/pexels-photo-12782140.png);
+}
+.india{
+  background-image: url(https://images.pexels.com/photos/3476860/pexels-photo-3476860.jpeg);
+}
+.new-zealand{
+  background-image: url(https://images.pexels.com/photos/20497637/pexels-photo-20497637.jpeg);
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  z-index: 1;
+}
+
+
+.hero-overlay {
+  background: rgba(225, 225, 225, .5);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  text-align: center;
+  border-radius: 12px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 10;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-family: 'DM Serif Text', serif;
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
