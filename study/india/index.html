@@ -10,6 +10,85 @@
   <link rel="stylesheet" href="/css/study.css">
 </head>
 <body>
+    <header class="site-header">
+    <div class="header-container">
+      <!-- Logo -->
+      <a href="#" class="site-logo">
+        <img src="/public/logo.png" alt="Thrive Overseas Logo" />
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="nav-desktop">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link">About Us</a>
+        <a href="/services" class="nav-link">Services</a>
+        <a href="/study/india/" class="nav-link">Study in India</a>
+        
+        <div class="nav-dropdown">
+          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            Study Abroad <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="dropdown-menu">
+            <a href="/study/Australia/" class="dropdown-item">Study in Australia</a>
+            <a href="/study/canada/" class="dropdown-item">Study in Canada</a>
+            <a href="/study/germany/" class="dropdown-item">Study in Germany</a>
+            <a href="/study/new-zealand/" class="dropdown-item">Study in New Zealand</a>
+            <a href="/study/uk/" class="dropdown-item">Study in the UK</a>
+            <a href="/study/usa/" class="dropdown-item">Study in the USA</a>
+          </div>
+        </div>
+        
+        <div class="nav-dropdown">
+          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            Work Abroad <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="dropdown-menu">
+            <a href="/work/dubai" class="dropdown-item">Work in Dubai</a>
+            <a href="/work/europe" class="dropdown-item">Work in Europe</a>
+            <a href="/work/uae" class="dropdown-item">Work in the UAE</a>
+          </div>
+        </div>
+        
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <!-- Mobile Navigation -->
+<nav class="nav-mobile" id="mobile-nav">
+  <a href="/" class="nav-link-mobile">Home</a>
+  <a href="/about" class="nav-link-mobile">About Us</a>
+  <a href="/services" class="nav-link-mobile">Services</a>
+  <a href="/study/india/" class="nav-link-mobile">Study in India</a>
+
+  <div class="nav-mobile-dropdown">
+    <div class="dropdown-toggle-mobile">Study Abroad</div>
+    <div class="dropdown-menu-mobile">
+      <a href="/study/Australia/" class="nav-link-mobile">Study in Australia</a>
+      <a href="/study/canada/" class="nav-link-mobile">Study in Canada</a>
+      <a href="/study/germany/" class="nav-link-mobile">Study in Germany</a>
+      <a href="/study/new-zealand/" class="nav-link-mobile">Study in New Zealand</a>
+      <a href="/study/uk/" class="nav-link-mobile">Study in the UK</a>
+      <a href="/study/usa/" class="nav-link-mobile">Study in the USA</a>
+    </div>
+  </div>
+
+  <div class="nav-mobile-dropdown">
+    <div class="dropdown-toggle-mobile">Work Abroad</div>
+    <div class="dropdown-menu-mobile">
+      <a href="/work/dubai" class="nav-link-mobile">Work in Dubai</a>
+      <a href="/work/europe" class="nav-link-mobile">Work in Europe</a>
+      <a href="/work/uae" class="nav-link-mobile">Work in the UAE</a>
+    </div>
+  </div>
+
+  <a href="/contact/" class="nav-link-mobile">Contact</a>
+</nav>
+
+      
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" id="mobileToggle" aria-label="Toggle mobile menu">
+  <i class="fas fa-bars" id="menu-icon"></i>
+</button>
+    </div>
+  </header>
     <section class="hero-section india">
   <div class="hero-overlay">
     <h1>Study Engineering in India</h1>
@@ -48,5 +127,90 @@
 <section>
   <h2>Get in Touch Today</h2>
   <p>Ready to take the next step in your academic career? Contact us for a free consultation and discover the best engineering colleges in India that suit your goals and budget.</p>
-</section></body>
+</div>
+  <section class="contact">
+    <div class="container">
+      <div class="contact-header">
+        <h2 class="section-title">Want to Study Engineering in India?</h2>
+      </div>
+      <form class="contact-form" id="contact-form">
+        <div class="form-row">
+          <input type="text" id="name" name="name" placeholder="Full Name" required class="form-input">
+          <input type="email" id="email" name="email" placeholder="Email Address" required class="form-input">
+          <input type="tel" id="mobile" name="mobile" placeholder="Phone Number" required class="form-input">
+          <textarea id="message" name="message" rows="5" placeholder="Additional Information (optional)" class="form-input form-textarea"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary ">Send Message</button>
+      </form>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+  <img src="/public/logo.png" alt="Thrive Overseas Logo" />
+
+          <p class="footer-description">
+            Your trusted partner for international education and career opportunities. Making dreams come true for
+            over two decades.
+          </p>
+        </div>
+        <div class="footer-nav">
+          <h4 class="footer-title">Quick Links</h4>
+          <a href="#" class="footer-link">Home</a>
+          <a href="#" class="footer-link">About Us</a>
+          <a href="#" class="footer-link">Services</a>
+          <a href="#" class="footer-link">Connect</a>
+        </div>
+        <div class="footer-contact">
+          <h4 class="footer-title">Contact</h4>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span> - +91 90636 40487</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span> - thrivecenter.info@gmail.com</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span> -  401, Sri Sai Ram Estate, Sairam Nagar, Nagarjuna Nagar, Srinagar Colony, Hyderabad - 500073, Telangana</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="copy"></span> Thrive Overseas. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/public/script.js"></script>
+  <script>
+    function toGoogle(e) {
+  e.preventDefault();  // This will stop the form from submitting and refreshing the page.
+  
+  var formData = new FormData(e.target);
+   formData.append("country", "India");
+   formData.append("purpose", "Education");
+  var keyValuePairs = [];
+  for (var pair of formData.entries()) {
+    keyValuePairs.push(pair[0] + '=' + pair[1]);
+  }
+
+  var formDataString = keyValuePairs.join('&');
+
+  if (keyValuePairs[0].split('=')[1]) {
+    fetch('https://script.google.com/macros/s/AKfycbwEwqx7ntiO9mS_EpGwCZiOv0Smr7srFof9lSkLK66yIGtliGl058kxzgiDPCHuH4bp/exec', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',  // Correct Content-Type
+      },
+      body: formDataString
+    })
+  }
+}
+
+document.getElementById('contact-form').addEventListener('submit', toGoogle);
+  </script>
+  <script src="/public/script.js"></script>
+</body>
 </html>

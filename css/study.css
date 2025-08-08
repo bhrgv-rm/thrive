@@ -40,10 +40,14 @@
     }
 
     @media (max-width: 768px) {
-      body {
-        padding: 10px;
-      }
+      
+  .header-container{
+    justify-content: space-between;
+  }
+  header{
 
+    padding: 0 10px;
+  }
       .container {
         padding: 10px;
       }
@@ -72,8 +76,8 @@
 .uae{
   background-image: url(https://images.pexels.com/photos/2115367/pexels-photo-2115367.jpeg);
 }
-.austria{
-  background-image: url(https://st3.depositphotos.com/2969793/14862/i/380/depositphotos_148628919-stock-photo-national-flag-of-austria-on.jpg);
+.australia{
+  background-image: url(https://images.pexels.com/photos/1766215/pexels-photo-1766215.jpeg);
 }
 .canada{
   background-image: url(https://images.pexels.com/photos/2448946/pexels-photo-2448946.jpeg);
@@ -85,6 +89,12 @@
   background-image: url(https://images.pexels.com/photos/3476860/pexels-photo-3476860.jpeg);
 }
 .new-zealand{
+  background-image: url(https://images.pexels.com/photos/20497637/pexels-photo-20497637.jpeg);
+}
+.usa{
+  background-image: url(https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg);
+}
+.uk{
   background-image: url(https://images.pexels.com/photos/20497637/pexels-photo-20497637.jpeg);
 }
 
@@ -108,6 +118,7 @@
   right: 10px;
   bottom: 10px;
   z-index: 10;
+  margin-left: 10px;
 }
 
 .hero-section h1 {

@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Us - Thrive Overseas</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:wght@400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/study.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        line-height: 1.7;
+        color: #2d3748;
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      h1 {
+        font-family: "DM Serif Text", serif;
+        font-size: 3.5rem;
+        font-weight: 400;
+        color: #1a202c;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+        color: #64748b;
+        font-weight: 500;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .contact-form-section {
+        background: white;
+        border-radius: 20px;
+        padding: 3rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05),
+          0 4px 6px -2px rgba(0, 0, 0, 0.03);
+        border: 1px solid #e2e8f0;
+      }
+
+      .contact-form-section h2 {
+        font-family: "DM Serif Text", serif;
+        font-size: 2rem;
+        color: #1a202c;
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #374151;
+        font-size: 0.9rem;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 2px solid #e5e7eb;
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+        background: #fafafa;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: #667eea;
+        background: white;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .submit-btn {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        width: 100%;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .contact-info-section {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .info-card {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05),
+          0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        border: 1px solid #e2e8f0;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .info-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+
+      .info-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+
+      .info-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .info-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        color: white;
+      }
+
+      .info-card h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #1a202c;
+        margin-bottom: 0.5rem;
+      }
+
+      .info-card p {
+        color: #4a5568;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      .info-card a {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .info-card a:hover {
+        text-decoration: underline;
+      }
+
+      .office-hours-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-align: center;
+      }
+
+      .office-hours-card .info-icon {
+        background: rgba(255, 255, 255, 0.2);
+        margin: 0 auto 1rem auto;
+      }
+
+      .office-hours-card h3 {
+        color: white;
+      }
+
+      .office-hours-card p {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .map-section {
+        background: white;
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05),
+          0 4px 6px -2px rgba(0, 0, 0, 0.03);
+        border: 1px solid #e2e8f0;
+        text-align: center;
+      }
+
+      .map-section h2 {
+        font-family: "DM Serif Text", serif;
+        font-size: 1.8rem;
+        color: #1a202c;
+        margin-bottom: 1rem;
+      }
+
+      .map-placeholder {
+        background: #f8fafc;
+        border: 2px dashed #d1d5db;
+        border-radius: 12px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #6b7280;
+        font-size: 1.1rem;
+        margin-top: 1rem;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .social-link {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: transform 0.2s ease;
+      }
+
+      .social-link:hover {
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 2rem 1rem;
+        }
+
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .contact-form-section {
+          padding: 2rem;
+        }
+
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+
+        .info-card {
+          padding: 1.5rem;
+        }
+
+        .map-section {
+          padding: 1.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        .subtitle {
+          font-size: 1rem;
+        }
+
+        .contact-form-section h2 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-container">
+        <!-- Logo -->
+        <a href="#" class="site-logo">
+          <img src="/public/logo.png" alt="Thrive Overseas Logo" />
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="nav-desktop">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/about" class="nav-link">About Us</a>
+          <a href="/services" class="nav-link">Services</a>
+          <a href="/study/india/" class="nav-link">Study in India</a>
+
+          <div class="nav-dropdown">
+            <button
+              class="dropdown-toggle"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Study Abroad <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="dropdown-menu">
+              <a href="/study/Australia/" class="dropdown-item"
+                >Study in Australia</a
+              >
+              <a href="/study/canada/" class="dropdown-item">Study in Canada</a>
+              <a href="/study/germany/" class="dropdown-item"
+                >Study in Germany</a
+              >
+              <a href="/study/new-zealand/" class="dropdown-item"
+                >Study in New Zealand</a
+              >
+              <a href="/study/uk/" class="dropdown-item">Study in the UK</a>
+              <a href="/study/usa/" class="dropdown-item">Study in the USA</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown">
+            <button
+              class="dropdown-toggle"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Work Abroad <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="dropdown-menu">
+              <a href="/work/dubai" class="dropdown-item">Work in Dubai</a>
+              <a href="/work/europe" class="dropdown-item">Work in Europe</a>
+              <a href="/work/uae" class="dropdown-item">Work in the UAE</a>
+            </div>
+          </div>
+
+          <a href="/contact" class="nav-link">Contact</a>
+        </nav>
+        <!-- Mobile Navigation -->
+        <nav class="nav-mobile" id="mobile-nav">
+          <a href="/" class="nav-link-mobile">Home</a>
+          <a href="/about" class="nav-link-mobile">About Us</a>
+          <a href="/services" class="nav-link-mobile">Services</a>
+          <a href="/study/india/" class="nav-link-mobile">Study in India</a>
+
+          <div class="nav-mobile-dropdown">
+            <div class="dropdown-toggle-mobile">Study Abroad</div>
+            <div class="dropdown-menu-mobile">
+              <a href="/study/Australia/" class="nav-link-mobile"
+                >Study in Australia</a
+              >
+              <a href="/study/canada/" class="nav-link-mobile"
+                >Study in Canada</a
+              >
+              <a href="/study/germany/" class="nav-link-mobile"
+                >Study in Germany</a
+              >
+              <a href="/study/new-zealand/" class="nav-link-mobile"
+                >Study in New Zealand</a
+              >
+              <a href="/study/uk/" class="nav-link-mobile">Study in the UK</a>
+              <a href="/study/usa/" class="nav-link-mobile">Study in the USA</a>
+            </div>
+          </div>
+
+          <div class="nav-mobile-dropdown">
+            <div class="dropdown-toggle-mobile">Work Abroad</div>
+            <div class="dropdown-menu-mobile">
+              <a href="/work/dubai" class="nav-link-mobile">Work in Dubai</a>
+              <a href="/work/europe" class="nav-link-mobile">Work in Europe</a>
+              <a href="/work/uae" class="nav-link-mobile">Work in the UAE</a>
+            </div>
+          </div>
+
+          <a href="/contact/" class="nav-link-mobile">Contact</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button
+          class="mobile-menu-btn"
+          id="mobileToggle"
+          aria-label="Toggle mobile menu"
+        >
+          <i class="fas fa-bars" id="menu-icon"></i>
+        </button>
+      </div>
+    </header>
+    <div class="container">
+      <div>
+        <h1>Contact Us</h1>
+        <p class="subtitle">
+          Ready to start your international journey? Get in touch with our
+          expert advisors today
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-form-section">
+          <h2>Send us a Message</h2>
+          <form id="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstname">First Name *</label>
+                <input type="text" id="firstName" name="firstname" required />
+              </div>
+              <div class="form-group">
+                <label for="lastname">Last Name *</label>
+                <input type="text" id="lastName" name="lastname" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service Interested In</label>
+              <select id="service" name="service">
+                <option value="">Select a service</option>
+                <option value="education-counselling">
+                  Education Counselling
+                </option>
+                <option value="test-preparation">Test Preparation</option>
+                <option value="university-selection">
+                  University Selection
+                </option>
+                <option value="visa-processing">Visa Processing</option>
+                <option value="jobs-abroad">Jobs Abroad</option>
+                <option value="ielts-training">IELTS Training</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="country">Preferred Country</label>
+              <select id="country" name="country">
+                <option value="">Select a country</option>
+                <option value="uk">United Kingdom</option>
+                <option value="ireland">Ireland</option>
+                <option value="canada">Canada</option>
+                <option value="newzealand">New Zealand</option>
+                <option value="usa">USA</option>
+                <option value="australia">Australia</option>
+                <option value="uae">UAE</option>
+                <option value="europe">Europe</option>
+                <option value="dubai">Dubai</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell us more about your goals and how we can help you..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+
+        <div class="contact-info-section">
+          <div class="info-card">
+            <div class="info-icon">📍</div>
+            <h3>Visit Our Office</h3>
+            <p>401, Sri Sai Ram Estate,</p>
+            <p>Sairam Nagar, Nagarjuna Nagar,</p>
+            <p>Srinagar Colony, Hyderabad</p>
+            <p>- 500073, Telangana</p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">📞</div>
+            <h3>Call Us</h3>
+            <p>Phone: <a href="tel:+911234567890">+91 12345 67890</a></p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">✉️</div>
+            <h3>Email Us</h3>
+            <a href="mailto:info@thriveoverseas.com"
+              >thrivecenter.info@gmail.com</a
+            >
+          </div>
+
+          <div class="info-card office-hours-card">
+            <div class="info-icon">🕒</div>
+            <h3>Office Hours</h3>
+            <p>
+              Monday - Friday: 9:00 AM - 7:00 PM<br />
+              Saturday: 9:00 AM - 5:00 PM<br />
+              Sunday: 10:00 AM - 4:00 PM<br /><br />
+              <strong>Emergency Support Available 24/7</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-section">
+        <h2>Find Us on the Map</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.602946335699!2d78.44677119715755!3d17.43083230648091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb912d84b21b25%3A0xca5354e8f0293e4a!2sSRI%20SAIRAM%20ESTATE!5e0!3m2!1sen!2sin!4v1754626406867!5m2!1sen!2sin"
+          style="border: 0; width: 100%; height: 300px;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <img src="/public/logo.png" alt="Thrive Overseas Logo" />
+            <p class="footer-description">
+              Your trusted partner for international education and career
+              opportunities. Making dreams come true for over two decades.
+            </p>
+          </div>
+          <div class="footer-nav">
+            <h4 class="footer-title">Navigation</h4>
+            <a href="#" class="footer-link">Home</a>
+            <a href="#" class="footer-link">About Us</a>
+            <a href="#" class="footer-link">Study Abroad</a>
+            <a href="#" class="footer-link">Work Abroad</a>
+            <a href="#" class="footer-link">Connect</a>
+          </div>
+          <div class="footer-contact">
+            <h4 class="footer-title">Contact</h4>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span> - +91 90636 40487</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span> - thrivecenter.info@gmail.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>
+                - 401, Sri Sai Ram Estate, Sairam Nagar, Nagarjuna Nagar,
+                Srinagar Colony, Hyderabad - 500073, Telangana</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="copy"></span> Thrive Overseas. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="/public/script.js"></script>
+    <script>
+    function toGoogle(e) {
+  e.preventDefault();  // This will stop the form from submitting and refreshing the page.
+  
+  var formData = new FormData(e.target);
+   formData.append("country", "UK");
+   formData.append("purpose", "Education");
+  var keyValuePairs = [];
+  for (var pair of formData.entries()) {
+    keyValuePairs.push(pair[0] + '=' + pair[1]);
+  }
+
+  var formDataString = keyValuePairs.join('&');
+
+  if (keyValuePairs[0].split('=')[1]) {
+    fetch('https://script.google.com/macros/s/AKfycbxd00Mr4ly-h2_UcxAEoQR0K69DhIl7UjPTfmHDqwlwBtl193SMpoXRqAl8OCywm15J3A/exec', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',  // Correct Content-Type
+      },
+      body: formDataString
+    })
+  }
+}
+
+document.getElementById('contact-form').addEventListener('submit', toGoogle);
+  </script>
+</html>

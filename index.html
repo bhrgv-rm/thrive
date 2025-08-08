@@ -9,13 +9,14 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/study.css">
 </head>
 <body> 
   <header class="site-header">
     <div class="header-container">
       <!-- Logo -->
       <a href="#" class="site-logo">
-        <img src="/placeholder.svg?height=40&width=120&text=Thrive+Overseas" alt="Thrive Overseas Logo" />
+        <img src="/public/logo.png" alt="Thrive Overseas Logo" />
       </a>
       
       <!-- Desktop Navigation -->
@@ -23,16 +24,16 @@
         <a href="/" class="nav-link">Home</a>
         <a href="/about" class="nav-link">About Us</a>
         <a href="/services" class="nav-link">Services</a>
+        <a href="/study/india/" class="nav-link">Study in India</a>
         
         <div class="nav-dropdown">
           <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
             Study Abroad <i class="fas fa-chevron-down"></i>
           </button>
           <div class="dropdown-menu">
-            <a href="/study/austria/" class="dropdown-item">Study in Australia</a>
+            <a href="/study/Australia/" class="dropdown-item">Study in Australia</a>
             <a href="/study/canada/" class="dropdown-item">Study in Canada</a>
             <a href="/study/germany/" class="dropdown-item">Study in Germany</a>
-            <a href="/study/india/" class="dropdown-item">Study in India</a>
             <a href="/study/new-zealand/" class="dropdown-item">Study in New Zealand</a>
             <a href="/study/uk/" class="dropdown-item">Study in the UK</a>
             <a href="/study/usa/" class="dropdown-item">Study in the USA</a>
@@ -50,16 +51,46 @@
           </div>
         </div>
         
-        <a href="/connect" class="nav-link">Connect</a>
+        <a href="/contact" class="nav-link">Contact</a>
       </nav>
+      <!-- Mobile Navigation -->
+<nav class="nav-mobile" id="mobile-nav">
+  <a href="/" class="nav-link-mobile">Home</a>
+  <a href="/about" class="nav-link-mobile">About Us</a>
+  <a href="/services" class="nav-link-mobile">Services</a>
+  <a href="/study/india/" class="nav-link-mobile">Study in India</a>
+
+  <div class="nav-mobile-dropdown">
+    <div class="dropdown-toggle-mobile">Study Abroad</div>
+    <div class="dropdown-menu-mobile">
+      <a href="/study/Australia/" class="nav-link-mobile">Study in Australia</a>
+      <a href="/study/canada/" class="nav-link-mobile">Study in Canada</a>
+      <a href="/study/germany/" class="nav-link-mobile">Study in Germany</a>
+      <a href="/study/new-zealand/" class="nav-link-mobile">Study in New Zealand</a>
+      <a href="/study/uk/" class="nav-link-mobile">Study in the UK</a>
+      <a href="/study/usa/" class="nav-link-mobile">Study in the USA</a>
+    </div>
+  </div>
+
+  <div class="nav-mobile-dropdown">
+    <div class="dropdown-toggle-mobile">Work Abroad</div>
+    <div class="dropdown-menu-mobile">
+      <a href="/work/dubai" class="nav-link-mobile">Work in Dubai</a>
+      <a href="/work/europe" class="nav-link-mobile">Work in Europe</a>
+      <a href="/work/uae" class="nav-link-mobile">Work in the UAE</a>
+    </div>
+  </div>
+
+  <a href="/contact/" class="nav-link-mobile">Contact</a>
+</nav>
+
       
       <!-- Mobile Menu Button -->
       <button class="mobile-menu-btn" id="mobileToggle" aria-label="Toggle mobile menu">
-        <i class="fas fa-bars"></i>
-      </button>
+  <i class="fas fa-bars" id="menu-icon"></i>
+</button>
     </div>
   </header>
-
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
@@ -251,7 +282,7 @@
           Ready to start your journey? Get in touch with our expert counselors today.
         </p>
       </div>
-      <form class="contact-form">
+      <form class="contact-form" id="contact-form">
         <div class="form-row">
           <input type="text" placeholder="Full Name" required class="form-input" />
           <input type="email" placeholder="Email Address" required class="form-input" />
@@ -304,31 +335,33 @@
     </div>
   </footer>
 
-  <script>
-    const copy = document.getElementById('copy')
-    const date = new Date().getFullYear();
-    copy.innerHTML = date;
-    function toggleMobileMenu() {
-      const mobileNav = document.getElementById('mobile-nav');
-      const menuIcon = document.getElementById('menu-icon');
-      
-      mobileNav.classList.toggle('active');
-      
-      if (mobileNav.classList.contains('active')) {
-        menuIcon.classList.remove('fa-bars');
-        menuIcon.classList.add('fa-times');
-      } else {
-        menuIcon.classList.remove('fa-times');
-        menuIcon.classList.add('fa-bars');
-      }
-    }
+    <script>
+    function toGoogle(e) {
+  e.preventDefault();  // This will stop the form from submitting and refreshing the page.
+  
+  var formData = new FormData(e.target);
+   formData.append("country", "Australia");
+   formData.append("purpose", "Education");
+  var keyValuePairs = [];
+  for (var pair of formData.entries()) {
+    keyValuePairs.push(pair[0] + '=' + pair[1]);
+  }
 
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('.nav-link-mobile').forEach(link => {
-      link.addEventListener('click', () => {
-        toggleMobileMenu();
-      });
-    });
+  var formDataString = keyValuePairs.join('&');
+
+  if (keyValuePairs[0].split('=')[1]) {
+    fetch('https://script.google.com/macros/s/AKfycbwEwqx7ntiO9mS_EpGwCZiOv0Smr7srFof9lSkLK66yIGtliGl058kxzgiDPCHuH4bp/exec', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',  // Correct Content-Type
+      },
+      body: formDataString
+    })
+  }
+}
+
+document.getElementById('contact-form').addEventListener('submit', toGoogle);
   </script>
+  <script src="/public/script.js"></script>
 </body>
 </html>

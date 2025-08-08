@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Services - Thrive Overseas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/study.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.7;
+      color: #2d3748;
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    section.main {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    h1 {
+      font-family: 'DM Serif Text', serif;
+      font-size: 3.5rem;
+      font-weight: 400;
+      color: #1a202c;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #64748b;
+      font-weight: 500;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e2e8f0;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .service-card h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1a202c;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .service-card p {
+      color: #4a5568;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .service-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, #667eea20, #764ba220);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin: 1rem 0;
+      border-left: 4px solid #667eea;
+    }
+
+    .highlight p {
+      margin: 0;
+      font-weight: 500;
+      color: #2d3748;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 2rem 1rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .service-card {
+        padding: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+
+      .service-card {
+        padding: 1.5rem;
+      }
+
+      .service-card h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <!-- Logo -->
+      <a href="#" class="site-logo">
+        <img src="/public/logo.png" alt="Thrive Overseas Logo" />
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="nav-desktop">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link">About Us</a>
+        <a href="/services" class="nav-link">Services</a>
+        <a href="/study/india/" class="nav-link">Study in India</a>
+        
+        <div class="nav-dropdown">
+          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            Study Abroad <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="dropdown-menu">
+            <a href="/study/Australia/" class="dropdown-item">Study in Australia</a>
+            <a href="/study/canada/" class="dropdown-item">Study in Canada</a>
+            <a href="/study/germany/" class="dropdown-item">Study in Germany</a>
+            <a href="/study/new-zealand/" class="dropdown-item">Study in New Zealand</a>
+            <a href="/study/uk/" class="dropdown-item">Study in the UK</a>
+            <a href="/study/usa/" class="dropdown-item">Study in the USA</a>
+          </div>
+        </div>
+        
+        <div class="nav-dropdown">
+          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            Work Abroad <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="dropdown-menu">
+            <a href="/work/dubai" class="dropdown-item">Work in Dubai</a>
+            <a href="/work/europe" class="dropdown-item">Work in Europe</a>
+            <a href="/work/uae" class="dropdown-item">Work in the UAE</a>
+          </div>
+        </div>
+        
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <!-- Mobile Navigation -->
+<nav class="nav-mobile" id="mobile-nav">
+  <a href="/" class="nav-link-mobile">Home</a>
+  <a href="/about" class="nav-link-mobile">About Us</a>
+  <a href="/services" class="nav-link-mobile">Services</a>
+  <a href="/study/india/" class="nav-link-mobile">Study in India</a>
+
+  <div class="nav-mobile-dropdown">
+    <div class="dropdown-toggle-mobile">Study Abroad</div>
+    <div class="dropdown-menu-mobile">
+      <a href="/study/Australia/" class="nav-link-mobile">Study in Australia</a>
+      <a href="/study/canada/" class="nav-link-mobile">Study in Canada</a>
+      <a href="/study/germany/" class="nav-link-mobile">Study in Germany</a>
+      <a href="/study/new-zealand/" class="nav-link-mobile">Study in New Zealand</a>
+      <a href="/study/uk/" class="nav-link-mobile">Study in the UK</a>
+      <a href="/study/usa/" class="nav-link-mobile">Study in the USA</a>
+    </div>
+  </div>
+
+  <div class="nav-mobile-dropdown">
+    <div class="dropdown-toggle-mobile">Work Abroad</div>
+    <div class="dropdown-menu-mobile">
+      <a href="/work/dubai" class="nav-link-mobile">Work in Dubai</a>
+      <a href="/work/europe" class="nav-link-mobile">Work in Europe</a>
+      <a href="/work/uae" class="nav-link-mobile">Work in the UAE</a>
+    </div>
+  </div>
+
+  <a href="/contact/" class="nav-link-mobile">Contact</a>
+</nav>
+
+      
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" id="mobileToggle" aria-label="Toggle mobile menu">
+  <i class="fas fa-bars" id="menu-icon"></i>
+</button>
+    </div>
+  </header>
+  <div class="container">
+    <section class="main">
+      <h1>Our Services</h1>
+      <p class="subtitle">Comprehensive support for your international education journey, from counseling to career success</p>
+    </section>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🎓</div>
+        <h2>Overseas Education Counselling</h2>
+        <p>Applying for studies abroad is a big decision. We go beyond helping you choose a country or university—we help you make the right career move.</p>
+        <div class="highlight">
+          <p>Our expert advisors evaluate your profile and suggest the best-fit universities based on your background and career aspirations. Book a free counselling session to begin your journey.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📚</div>
+        <h2>Test Preparation</h2>
+        <p>We offer classroom coaching for SAT, ACT, GRE, GMAT, IELTS, TOEFL, and PTE, with a focus on personal attention, flexible schedules, and expert instructors.</p>
+        <p>Our study material, mock tests, and guided approach ensure you're fully prepared.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🌍</div>
+        <h2>Country, Program & University Selection</h2>
+        <p>We provide access to 700+ universities across 29 countries. Our counsellors recommend the best courses and universities tailored to your goals and budget.</p>
+        <p>We also provide insight into scholarships and internships to help you plan better.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📝</div>
+        <h2>Application & Admission Assistance</h2>
+        <p>From SOPs and LORs to essays and resumes, we help craft strong university applications and guide you through submission and follow-ups.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💰</div>
+        <h2>Financial Aid</h2>
+        <p>We assist with finding scholarships, grants, and education loans to ease the financial burden. Our guidance increases your chances of getting aid.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📋</div>
+        <h2>Visa Processing</h2>
+        <p>We help with visa forms, document preparation, mock interviews, and submission. Our high visa approval rate ensures you're well-supported.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🛫</div>
+        <h2>Pre-Departure Briefing</h2>
+        <p>We prepare you for life abroad with sessions on travel, arrival procedures, immigration, and cultural tips. You'll also connect with alumni and fellow students before you fly.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">✈️</div>
+        <h2>Travel Assistance</h2>
+        <p>We help with flights, accommodation, currency exchange, and insurance. With our alumni support, you'll feel welcome no matter where you land.</p>
+      </div>
+    </div>
+  </div>
+    <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="/public/logo.png" alt="Thrive Overseas Logo" />
+          <p class="footer-description">
+            Your trusted partner for international education and career opportunities. Making dreams come true for
+            over two decades.
+          </p>
+        </div>
+        <div class="footer-nav">
+          <h4 class="footer-title">Navigation</h4>
+          <a href="#" class="footer-link">Home</a>
+          <a href="#" class="footer-link">About Us</a>
+          <a href="#" class="footer-link">Study Abroad</a>
+          <a href="#" class="footer-link">Work Abroad</a>
+          <a href="#" class="footer-link">Connect</a>
+        </div>
+        <div class="footer-contact">
+          <h4 class="footer-title">Contact</h4>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span> - +91 90636 40487</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span> - thrivecenter.info@gmail.com</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span> -  401, Sri Sai Ram Estate, Sairam Nagar, Nagarjuna Nagar, Srinagar Colony, Hyderabad - 500073, Telangana</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="copy"></span> Thrive Overseas. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/public/script.js"></script>
+</body>
+</html>
